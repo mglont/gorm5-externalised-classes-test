@@ -1,5 +1,8 @@
 package foo
 
+import grails.persistence.*
+
+@Entity
 class Author {
 	String name
 
