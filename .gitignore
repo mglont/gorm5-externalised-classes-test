@@ -1,0 +1,6 @@
+# maven build folder
+target
+
+# intellij stuff
+*.iws
+.idea
