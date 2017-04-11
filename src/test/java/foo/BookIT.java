@@ -2,11 +2,12 @@ package foo;
 
 import grails.orm.bootstrap.HibernateDatastoreSpringInitializer;
 import org.hamcrest.CoreMatchers;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.springframework.context.ApplicationContext;
+import org.grails.datastore.gorm.validation.DefaultDomainClassValidator;
 
 import java.util.Arrays;
 
@@ -16,8 +17,9 @@ import static org.junit.Assert.*;
 public class BookIT {
 
     @SuppressWarnings("unused")
-    @Before
-    public void setup() {
+    @BeforeClass
+    public static void setup() {
+        assertNotNull(DefaultDomainClassValidator.class.getSimpleName());
         HibernateDatastoreSpringInitializer initializer = new HibernateDatastoreSpringInitializer(
                 Arrays.asList(Book.class, Author.class));
         ApplicationContext applicationContext = initializer.configure();

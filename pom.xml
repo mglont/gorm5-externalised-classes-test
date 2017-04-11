@@ -130,6 +130,7 @@
 			<groupId>org.grails</groupId>
 			<artifactId>grails-datastore-test-support</artifactId>
 			<version>1.0-grails-2.4</version>
+            <scope>test</scope>
 		</dependency>
 
         <dependency>
@@ -153,7 +154,16 @@
                     <groupId>org.grails</groupId>
                     <artifactId>grails-core</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.grails</groupId>
+                    <artifactId>grails-datastore-gorm-support</artifactId>
+                </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.grails</groupId>
+            <artifactId>grails-datastore-gorm-grails2-support</artifactId>
+            <version>5.0.13.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.grails</groupId>
